@@ -1,29 +1,33 @@
+
 <div class="blog-listing-item">
-  <ul clas="o-grid <%# IfEmpty(Eval("BlogPostTeaser"), "", "o-grid--2up") %>">
-	<li class="o-grid__item">
-		
-		<h4><a href="<%# Eval("BlogPostURL") %>" target="_blank" class="u-link"><%# Eval("BlogPostTitlePrefix2") %></a></h4>
+    <ul class="o-grid <%# IfEmpty(Eval("BlogPostImg"), "", "o-grid--2up") %>">
+        <li class="o-grid__item <%# IfEmpty(Eval("BlogPostImg"), "u-hidden","") %>">
+            <!-- Figure Image -->
+            <figure class="o-figure" itemscope="" itemtype="http://schema.org/ImageObject">
+                <div class="">
+                    <!-- Multiple image sources with widths
+                    ** NOTE ** vw is relative to viewport width, i.e. 100 = full width, 50 = 1/2 of the width  -->
+                    <!--<img src="https://fakeimg.pl/500x300" srcset="https://fakeimg.pl/300x180 300w, https://fakeimg.pl/500x300 500w, https://fakeimg.pl/1000x600 1000w" sizes="100vw" alt="Placeholder image" class="o-figure__media">-->
+                    <a href="<%# GetDocumentUrl() %>"><img alt="<%# Eval(" BlogPostAltTxt") %>" class="media media-image hero-feature__image"
+                    srcset="/92StreetY/media/img/Institutional/Press/BlogTB/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/Press/LG/", "").Replace("~","") %> 424w,
+                    /92StreetY/media/img/Institutional/Press/SM/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/Press/LG/", "").Replace("~","") %> 530w"
+                    sizes="(max-width: 29.99em) calc(100vw - 40px), (min-width: 30em) calc(50vw - 30px), (min-width: 1154px) 530px" src="/92StreetY/media/img/Institutional/Press/SM/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/Press/LG/", "").Replace("~","") %>"/>
+                    </a>
+                </div>
+                
+            </figure>
+            <!--/ Figure Image -->
+        </li>
+    <li class="o-grid__item">
+            <h4><a href="<%# Eval("BlogPostURL") %>" target="_blank" class="u-link"><%# Eval("BlogPostTitlePrefix2") %></a></h4>
 		<h4><a href="<%# Eval("BlogPostURL") %>" target="_blank""><%# Eval("BlogPostTitle") %></a></h4>
-		<small><%# Eval("BlogPostDate", "{0:MMMM d, yyyy}") %></small>
-		<p><%# Eval("BlogPostSummary") %>
-		<!--<br><%# Eval("DocumentTags") %>--></p>
-		<p><a class="btn inline-button" href="<%# GetDocumentUrl() %>">Read more</a></p>
-	</li>
-	<li class="o-grid__item <%# IfEmpty(Eval("BlogPostTeaser"), "u-hidden","") %>">
-		<!-- Figure Image -->
-		<figure class="o-figure" itemscope="" itemtype="http://schema.org/ImageObject">
-			<div class="">
-				<!-- Multiple image sources with widths
-				** NOTE ** vw is relative to viewport width, i.e. 100 = full width, 50 = 1/2 of the width  -->
-				<!--<img src="https://fakeimg.pl/500x300" srcset="https://fakeimg.pl/300x180 300w, https://fakeimg.pl/500x300 500w, https://fakeimg.pl/1000x600 1000w" sizes="100vw" alt="Placeholder image" class="o-figure__media">-->
-				<a href="<%# Eval("BlogPostURL") %>" target="_blank" class="u-link"><img id="" class="o-figure__media" src="<%# Eval("BlogPostImg") %>" alt="<%# Eval("BlogPostTitle") %>"></a>
-			</div>
-			
-		</figure>
-		<!--/ Figure Image -->
-	</li>
-</ul>
+            <!--<small><%# Eval("BlogPostDate") %></small>-->
+            <p><%# Eval("BlogPostSummary") %>
+            <!--<br><%# Eval("DocumentTags") %>--> &hellip;</p>
+            <p><a class="btn inline-button" href="<%# GetDocumentUrl() %>">Read more</a></p>
+        </li>
+        
+    </ul>
+
 </div>
-
-
 
