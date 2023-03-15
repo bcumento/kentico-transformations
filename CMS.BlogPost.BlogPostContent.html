@@ -1,10 +1,12 @@
-<div class="program-summary__prefix"><%# Eval("BlogPostTitlePrefix") %></div>
 <header class="page-header">
+	<div class="blog-title-prefix-1"><%# Eval("BlogPostTitlePrefix") %></div>
 	<h1 class="page-header__title">
 		<%# IfEmpty(Eval("DisplayName"), Eval("BlogPostTitle"), Eval("DisplayName"))
 		%>
 	</h1>
+	<div class="blog-title-suffix"><%# Eval("BlogPostTitleSuffix") %></div>
 </header>
+
 <!--<div class="s-prose">-->
 <%# Eval("BlogPostBody") %>
 <!--</div>-->
