@@ -19,7 +19,7 @@
         </li>
     <li class="o-grid__item">
             <h4><a href="<%# GetDocumentUrl() %>"><%# IfEmpty(Eval("DisplayName"), Eval("BlogPostTitle"), Eval("DisplayName")) %></a></h4>
-            <!--<small><%# Eval("BlogPostDate") %></small>-->
+            <p><%# Eval("BlogPostDate", "{0:MMMM d, yyyy}") %></p>
             <p><%# Eval("BlogPostSummary") %>
             <!--<br><%# Eval("DocumentTags") %>--> &hellip;</p>
             <p><a class="btn inline-button" href="<%# GetDocumentUrl() %>">Read more</a></p>
