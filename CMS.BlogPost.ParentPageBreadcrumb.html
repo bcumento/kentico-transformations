@@ -1,0 +1,37 @@
+<script runat="server">
+  public string DocumentTags { get; set; }
+  public string ParentPageURL { get; set; }
+  public string ParentPage { get; set; }
+  
+  protected override void OnDataBinding(EventArgs e)
+  {
+    base.OnDataBinding(e);
+    DocumentTags = Eval("DocumentTags").ToString().ToLower();
+    
+    if (DocumentTags.Contains("Family activities".ToLower())) {
+      ParentPageURL = "/92Yathome/family-activities";
+      ParentPage = "Family Activities";
+    } else if (DocumentTags.Contains("Thought for the Day".ToLower())) {
+      ParentPageURL = "/92Yathome/thoughts";
+      ParentPage = "Thought for the Day";
+    } else if (DocumentTags.Contains("Teens".ToLower())) {
+      ParentPageURL = "/92Yathome/teens";
+      ParentPage = "For Teens";
+    } else if (DocumentTags.Contains("Living Well".ToLower())) {
+      ParentPageURL = "/92Yathome/living-well";
+      ParentPage = "Living Well";
+    } else {
+      ParentPageURL = "/92Yathome";
+      ParentPage = "All Posts";
+    } 
+    
+  }
+ 
+</script>
+<!-- Parent Page Breadcrumb -->
+<nav class="breadcrumb">
+<ul class="breadcrumb__list u-constrained" itemscope itemtype="http://data-vocabulary.org/BreadcrumbList">
+	<li class="bc-1 breadcrumb__item od-breadnav-ws next-last" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="breadcrumb__link" href="<%# ParentPageURL %>" itemprop="item" title="<%# ParentPage %>"><span itemprop="name"><%# ParentPage %></span> </a><meta itemprop="position" content="1"></li>
+</ul>
+</nav>
+
