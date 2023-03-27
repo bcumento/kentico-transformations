@@ -1,0 +1,57 @@
+<ul class="o-grid o-grid--2up">
+    <li class="o-grid__item sticky-container-child">
+        <div class="sticky-element">
+            <header class="page-header">
+                <div class="ff-display feature-150--prefix-1">
+                    That time when&nbsp;&hellip;
+                </div>
+                
+                <div class="feature-150--prefix-2">A peek into the 150-year history of the 92nd Street Y, New York</div>
+              
+            </header>
+            <div class="about-150 show-hide--lg">
+                <div class="logo-150"><img src="/92StreetY/media/img/Logos/92NY/92ny150-white-gold.svg"></div>
+                <p>Over the past 150 years, 92NY has grown into one of New York City&rsquo;s &mdash; and the world&rsquo;s &mdash; most unique and influential cultural institutions. Some of the most fascinating thinkers, artists, writers and entertainers of the 20th and 21st centuries have come here to develop new work, teach, learn and share ideas. <strong><em>That Time When &hellip;</em></strong> spotlights favorite moments from the annals of The 92nd Street Y, New York.</p>
+            </div>
+        </div>
+    </li>
+    <li class="o-grid__item">
+        <header class="page-header">
+            <div class="blog-title-prefix-1">
+                <%# Eval("BlogPostTitlePrefix") %>
+            </div>
+            <div class="blog-title-prefix-2">
+                <%# Eval("BlogPostTitlePrefix2") %>
+            </div>
+            <h1 class="page-header__title">
+                <%# IfEmpty(Eval("DisplayName"), Eval("BlogPostTitle"), Eval("DisplayName")) %>
+            </h1>
+            <div class="blog-title-suffix">
+                <%# Eval("BlogPostTitleSuffix") %>
+            </div>
+        </header>
+        <figure class="o-figure <%# IfEmpty(Eval(" BlogPostVideo"), "u-hidden" ,"") %>" itemscope="" itemtype="http://schema.org/ImageObject">
+            <div>
+                <%# Eval("BlogPostVideo") %>
+            </div>
+        </figure>
+        <figure class="o-figure" itemscope="" itemtype="http://schema.org/ImageObject">
+            <div>
+                <img alt="<%# Eval(" BlogPostAltTxt") %>" class="media media-image hero-feature__image"
+                srcset="/92StreetY/media/img/Institutional/92NY-Insider/BlogTB/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/92NY-Insider/BlogLG/", "").Replace("~","") %> 424w,
+                /92StreetY/media/img/Institutional/92NY-Insider/BlogSM/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/92NY-Insider/BlogLG/", "").Replace("~","") %> 530w,
+                /92StreetY/media/img/Institutional/92NY-Insider/BlogMD/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/92NY-Insider/BlogLG/", "").Replace("~","") %> 640w"
+                sizes="(max-width: 29.99em) calc(100vw - 40px), (min-width: 30em) calc(50vw - 30px), (min-width: 1386px) 640px" src="/92StreetY/media/img/Institutional/92NY-Insider/BlogMD/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/92NY-Insider/BlogLG/", "").Replace("~","") %>"/>
+            </div>
+            <figcaption class="o-figure__caption"><em>
+                    <%# Eval("BlogPostImgCaption") %></em></figcaption>
+        </figure>
+        <!--<div class="s-prose">-->
+        <div><%# Eval("BlogPostBody") %></div>
+        <!--</div>-->
+        <div class="about-150 show-hide--sm">
+            <div class="logo-150"><img src="/92StreetY/media/img/Logos/92NY/92ny150-white-gold.svg"></div>
+            <p>Over the past 150 years, 92NY has grown into one of New York City&rsquo;s &mdash; and the world&rsquo;s &mdash; most unique and influential cultural institutions. Some of the most fascinating thinkers, artists, writers and entertainers of the 20th and 21st centuries have come here to develop new work, teach, learn and share ideas. <strong><em>That Time When &hellip;</em></strong> spotlights favorite moments from the annals of The 92nd Street Y, New York.</p>
+        </div>
+    </li>
+</ul>
