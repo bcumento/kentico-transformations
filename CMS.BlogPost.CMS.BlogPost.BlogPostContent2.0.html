@@ -2,8 +2,12 @@
     <li class="o-grid__item sticky-container-child">
         <div class="sticky-element">
             
-            <header class="page-header"><div class="blog-title-prefix-1">
+            <header class="page-header">
+                <div class="blog-title-prefix-1">
                 <%# Eval("BlogPostTitlePrefix") %>
+            </div>
+            <div class="blog-title-prefix-2">
+                <%# Eval("BlogPostTitlePrefix2") %>
             </div>
                 <h1 class="page-header__title">
                     <%# IfEmpty(Eval("DisplayName"), Eval("BlogPostTitle"), Eval("DisplayName")) %>
