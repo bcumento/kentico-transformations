@@ -1,0 +1,57 @@
+<ul class="o-grid o-grid--2up">
+    <li class="o-grid__item sticky-container-child">
+        <div class="sticky-element">
+            
+            <header class="page-header"><div class="blog-title-prefix-1">
+                <%# Eval("BlogPostTitlePrefix") %>
+            </div>
+                <h1 class="page-header__title">
+                    <%# IfEmpty(Eval("DisplayName"), Eval("BlogPostTitle"), Eval("DisplayName")) %>
+                </h1>
+              <div class="blog-title-suffix">
+                <%# Eval("BlogPostTitleSuffix") %>
+            </div>
+            </header>
+            
+            <figure class="o-figure <%# IfEmpty(Eval("BlogPostVideo"), "u-hidden","") %>" itemscope="" itemtype="http://schema.org/ImageObject">
+                <div>
+                    <%# Eval("BlogPostVideo") %>
+</div>
+            </figure>
+            <figure class="o-figure" itemscope="" itemtype="http://schema.org/ImageObject">
+                <div>
+<img alt="<%# Eval(" BlogPostAltTxt") %>" class="media media-image hero-feature__image"
+srcset="/92StreetY/media/img/Institutional/92NY-Insider/BlogTB/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/92NY-Insider/BlogLG/", "").Replace("~","") %> 424w,
+/92StreetY/media/img/Institutional/92NY-Insider/BlogSM/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/92NY-Insider/BlogLG/", "").Replace("~","") %> 530w,
+/92StreetY/media/img/Institutional/92NY-Insider/BlogMD/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/92NY-Insider/BlogLG/", "").Replace("~","") %> 640w"
+sizes="(max-width: 29.99em) calc(100vw - 40px), (min-width: 30em) calc(50vw - 30px), (min-width: 1386px) 640px" src="/92StreetY/media/img/Institutional/92NY-Insider/BlogMD/<%# Eval(" BlogPostImg").ToString().Replace("/92StreetY/media/img/Institutional/92NY-Insider/BlogLG/", "").Replace("~","") %>"/>
+</div><figcaption class="o-figure__caption"><em><%# Eval("BlogPostImgCaption") %></em></figcaption>
+            </figure>
+        </div>
+    </li>
+    <li class="o-grid__item">
+        <!--<div class="s-prose">-->
+        <%# Eval("BlogPostBody") %>
+        <!--</div>-->
+    </li>
+</ul>
+
+
+<style type="text/css">
+    @media (min-width: 30em) and (max-width: 49.99em) {
+	.o-grid--2up .o-grid__item:nth-child(2) {
+	    width: calc(50% - 20px);
+    	margin: 0 0 2px 20px;
+	}
+}
+
+@media (min-width: 62.5em) {
+	.sticky-element {
+		padding-top: 32px;
+	}
+
+	.o-grid__item:nth-child(2) {
+		padding-top: 42px;
+	}
+}
+</style>
