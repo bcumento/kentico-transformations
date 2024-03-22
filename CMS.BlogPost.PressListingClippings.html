@@ -7,7 +7,7 @@
         </li>
     <li class="o-grid__item">
             <h4><a href="<%# Eval("BlogPostURL") %>" target="_blank" class="u-link"><%# Eval("BlogPostTitlePrefix2") %></a></h4>
-		<h3><a href="<%# Eval("BlogPostURL") %>" target="_blank""><%# Eval("BlogPostTitle") %></a></h3>
+		<h3><a href="<%# Eval("BlogPostURL") %>" target="_blank""><%# Eval("DisplayName") %></a></h3>
             <p><%# Eval("BlogPostDate", "{0:MMMM d, yyyy}") %></p>
             <p><%# Eval("BlogPostSummary") %>
             <!--<br><%# Eval("DocumentTags") %>--> &hellip;</p>
@@ -17,4 +17,3 @@
     </ul>
 
 </div>
-
