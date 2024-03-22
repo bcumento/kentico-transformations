@@ -7,13 +7,15 @@
         </li>
     <li class="o-grid__item">
             <h4><a href="<%# Eval("BlogPostURL") %>" target="_blank" class="u-link"><%# Eval("BlogPostTitlePrefix2") %></a></h4>
-		<h3><a href="<%# Eval("BlogPostURL") %>" target="_blank""><%# Eval("DisplayName") %></a></h3>
+		<h3 class="<%# IfEmpty(Eval("BlogPostURL"), "u-hidden","") %>""><a href="<%# Eval("BlogPostURL") %>" target="_blank""><%# Eval("DisplayName") %></a></h3>
+        <h3 class="<%# IfEmpty(Eval("BlogPostURL"), "","u-hidden") %>""><%# Eval("DisplayName") %></h3>
             <p><%# Eval("BlogPostDate", "{0:MMMM d, yyyy}") %></p>
-            <p><%# Eval("BlogPostSummary") %>
+            <p class="<%# IfEmpty(Eval("BlogPostURL"), "u-hidden","") %>""><%# Eval("BlogPostSummary") %>
             <!--<br><%# Eval("DocumentTags") %>--> &hellip;</p>
-            <p><a class="btn inline-button" href="<%# GetDocumentUrl() %>">Read more</a></p>
+            <p><a class="btn inline-button <%# IfEmpty(Eval("BlogPostURL"), "u-hidden","") %>"" href="<%# GetDocumentUrl() %>" >Read more</a></p>
         </li>
         
     </ul>
 
 </div>
+<!-- For IfEmpty, if the first parameter is null, the method returns the second parameter. If the first parameter is not null, the third parameter is returned. More info at https://docs.kentico.com/k12sp/developing-websites/loading-and-displaying-data-on-websites/writing-transformations/reference-transformation-methods#ReferenceTransformationmethods-Booleanoperations-->
